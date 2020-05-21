@@ -5,7 +5,7 @@ using namespace std;
 
 double fa(double x)
 {
-    return 1/(1+x*x);
+    return 1/(1+(x*x));
 }
 
 double fb(double x)
@@ -24,29 +24,44 @@ int main()
     cout << "f(x) = [a,b,c]";
     cin >> func;
 
-    double b, a;
-
-    cout << "enter a, b: ";
+    double c1, c2, x1,x2, a,b;
+    cout << "Enter c1, c2, x1, x2";
+    cin >> c1;
+    cin >> c2;
+    cin >> x1;
+    cin >> x2;
+    cout << "Enter integral limits a, b: ";
     cin >> a;
     cin >> b;
 
-    double fx;
+    double limitFactor = (b-a)/2;
+    double limitFactor2 = (b+a)/2;
+
+    double fx1, fx2;
 
     switch (func)
     {
         case 'a':
-            fx = fa((b+a)/2);
+            fx1 = fa((limitFactor * x1) + limitFactor2);
+            fx2 = fa((limitFactor * x2) + limitFactor2);
             break;
         
         case 'b':
-            fx = fb((b+a)/2);
+            fx1 = fb((limitFactor * x1) + limitFactor2);
+            fx2 = fb((limitFactor * x2) + limitFactor2);
             break;
         case 'c':
-            fx = fc((b+a)/2);
+            fx1 = fc((limitFactor * x1) + limitFactor2);
+            fx2 = fc((limitFactor * x2) + limitFactor2);
             break;
     }
 
-    fx = (b-a)*fx;
-    cout << "Gaussian Quadrature for function is " << fx;
+    fx1 *= c1;
+    fx2 *= c2;
+    fx1 += fx2;
+
+    double ans = limitFactor * fx1;
+
+    cout << "The approximate integral of the function is " << ans;
 
 }
