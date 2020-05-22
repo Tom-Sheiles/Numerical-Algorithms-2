@@ -69,6 +69,6 @@ int main()
         }
     }while (abs(speed3 - 36) <= 0.00001);
 
-    std::cout << "b)A drag coefficent of " << x2 << " is needed\n"; 
+    std::cout << "b)A drag coefficient of " << x2 << " is needed\n"; 
 
 }
