@@ -45,7 +45,7 @@ int main()
             break;
         } 
         }
-        std::cout << "a)xr = "<< xr << "\n";
+        std::cout << "a)The mass needed is = "<< xr << "\n";
     }
 
     c = 80, t = 4;
