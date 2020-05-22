@@ -50,7 +50,7 @@ int main()
 
     c = 80, t = 4;
     //BISECTION SEARCH
-    float x0 = 0.1, x1 = 0.2;
+    float x0 = 3.0, x1 = 4.0;
     float speed1 = f(x0,c, t);
     float speed2 = f(x1,c, t);
     float x2, speed3;
@@ -69,6 +69,6 @@ int main()
         }
     }while (abs(speed3 - 36) <= 0.00001);
 
-    std::cout << "b)The object reaches 36m/s " << x2 << " seconds"; 
+    std::cout << "b)A drag coefficent of " << x2 << " is needed\n"; 
 
 }
